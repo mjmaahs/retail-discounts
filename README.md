@@ -12,6 +12,12 @@
 
 ## How to Run the Code
 
+### Clone the Repository
+
+```
+git clone https://github.com/mjmaahs/retail-discounts.git
+```
+
 ### Run Dockerized Database & Application
 
 On Windows, open your command prompt and run:
