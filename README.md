@@ -18,3 +18,10 @@ mvn sonar:sonar -Dsonar.java.binaries=target/classes -Dsonar.login=sqa_1c3d332a3
 
 # JACOCO report path
 D:\projects\Apps\retail-discounts\target\site\jacoco
+
+
+
+
+
+
+cd /drives/d/projects/Apps/retail-discounts/
