@@ -1,9 +1,9 @@
 package com.retaildiscounts;
 
-import com.retaildiscounts.model.AppUser;
-import com.retaildiscounts.model.Customer;
-import com.retaildiscounts.model.CustomerType;
-import com.retaildiscounts.model.Product;
+import com.retaildiscounts.model.entity.AppUser;
+import com.retaildiscounts.model.entity.Customer;
+import com.retaildiscounts.model.entity.CustomerType;
+import com.retaildiscounts.model.entity.Product;
 import com.retaildiscounts.repository.AppUserRepository;
 import com.retaildiscounts.repository.CustomerRepository;
 import com.retaildiscounts.repository.ProductRepository;

@@ -1,6 +1,8 @@
 package com.retaildiscounts.controller;
 
-import com.retaildiscounts.model.Bill;
+import com.retaildiscounts.model.dto.BillDTO;
+import com.retaildiscounts.model.entity.Bill;
+import com.retaildiscounts.model.mapper.BillMapper;
 import com.retaildiscounts.service.DiscountCalculatorService;
 import jakarta.validation.Valid;
 import org.jetbrains.annotations.NotNull;
@@ -21,8 +23,12 @@ public class RetailController {
     @Autowired
     private DiscountCalculatorService discountCalculatorService;
 
+    @Autowired
+    private BillMapper billMapper;
+
     @PostMapping("/calculate-net-amount")
-    public ResponseEntity<BigDecimal> calculateNetAmount(@RequestBody @Valid @NotNull Bill bill) {
+    public ResponseEntity<BigDecimal> calculateNetAmount(@RequestBody @Valid @NotNull BillDTO billDTO) {
+        Bill bill = billMapper.mapToEntity(billDTO);
         BigDecimal netAmount = discountCalculatorService.calculateNetAmount(bill);
         return new ResponseEntity<>(netAmount, HttpStatus.OK);
     }

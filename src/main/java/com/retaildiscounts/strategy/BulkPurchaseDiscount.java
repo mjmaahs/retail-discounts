@@ -1,6 +1,6 @@
 package com.retaildiscounts.strategy;
 
-import com.retaildiscounts.model.Product;
+import com.retaildiscounts.model.entity.Product;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

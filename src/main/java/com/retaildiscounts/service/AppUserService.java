@@ -1,6 +1,6 @@
 package com.retaildiscounts.service;
 
-import com.retaildiscounts.model.AppUser;
+import com.retaildiscounts.model.entity.AppUser;
 import com.retaildiscounts.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;

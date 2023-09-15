@@ -1,7 +1,7 @@
 package com.retaildiscounts;
 
 import com.retaildiscounts.exception.EntityNotFoundException;
-import com.retaildiscounts.model.*;
+import com.retaildiscounts.model.entity.*;
 import com.retaildiscounts.repository.AppUserRepository;
 import com.retaildiscounts.repository.CustomerRepository;
 import com.retaildiscounts.repository.ProductRepository;

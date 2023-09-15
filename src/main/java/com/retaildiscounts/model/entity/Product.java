@@ -1,4 +1,4 @@
-package com.retaildiscounts.model;
+package com.retaildiscounts.model.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

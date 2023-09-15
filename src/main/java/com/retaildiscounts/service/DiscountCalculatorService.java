@@ -1,10 +1,10 @@
 package com.retaildiscounts.service;
 
 import com.retaildiscounts.exception.EntityNotFoundException;
-import com.retaildiscounts.model.Bill;
-import com.retaildiscounts.model.Customer;
-import com.retaildiscounts.model.CustomerType;
-import com.retaildiscounts.model.Product;
+import com.retaildiscounts.model.entity.Bill;
+import com.retaildiscounts.model.entity.Customer;
+import com.retaildiscounts.model.entity.CustomerType;
+import com.retaildiscounts.model.entity.Product;
 import com.retaildiscounts.repository.CustomerRepository;
 import com.retaildiscounts.repository.ProductRepository;
 import com.retaildiscounts.strategy.*;

@@ -1,4 +1,4 @@
-package com.retaildiscounts.model;
+package com.retaildiscounts.model.entity;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
