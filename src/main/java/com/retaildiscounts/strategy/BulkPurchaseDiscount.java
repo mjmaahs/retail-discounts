@@ -8,8 +8,8 @@ import java.util.List;
 
 public class BulkPurchaseDiscount implements DiscountStrategy {
 
-    private static final BigDecimal DISCOUNT_PER_HUNDRED = new BigDecimal("5");
-    private static final BigDecimal HUNDRED = new BigDecimal("100");
+    private static final BigDecimal DISCOUNT_PER_HUNDRED = new BigDecimal("5.00");
+    private static final BigDecimal HUNDRED = new BigDecimal("100.00");
 
     @Override
     public BigDecimal applyDiscount(BigDecimal totalAmount, List<Product> products) {
