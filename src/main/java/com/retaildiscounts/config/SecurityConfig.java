@@ -18,9 +18,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
-                configurer
-                        .requestMatchers(HttpMethod.POST, "/api/calculate-net-amount").hasRole("CASHIER")
-                        .requestMatchers(HttpMethod.POST, "/api/calculate-net-amount").hasRole("MANAGER")
+                configurer.requestMatchers(HttpMethod.POST, "/api/calculate-net-amount").hasRole("CASHIER")
         );
         http.httpBasic(Customizer.withDefaults());
         http.userDetailsService(userDetailsService);
