@@ -20,20 +20,11 @@ git clone https://github.com/mjmaahs/retail-discounts.git
 
 ### Run Dockerized Database & Application
 
-On Windows, open your command prompt and run:
+Open your command prompt and run:
 
 ```bash
-D: && cd D:\projects\Apps\retail-discounts
+cd path/to/retail-discounts
 docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean install && docker-compose up -d app
-```
-
-### Run Dockerized Database Only
-
-To run only the database, execute the following:
-
-```bash
-D: && cd D:\projects\Apps\retail-discounts
-docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean install
 ```
 
 ## How to Run Tests
@@ -41,27 +32,42 @@ docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean in
 To run the unit tests, use the following Maven command:
 
 ```bash
+cd path/to/retail-discounts
 mvn test
 ```
 
 ## How to Generate Coverage Reports
 
-### Run JaCoCo for Test Coverage
+### JaCoCo report
 
 Running the tests via Maven will also generate a JaCoCo report. You can find the report at:
 
 ```text
-D:\projects\Apps\retail-discounts\target\site\jacoco
+path/to/retail-discounts/target/site/jacoco
+```
+
+### SonarQube Report
+
+You can find the SonarQube report at:
+
+```text
+path/to/retail-discounts/src/sonarqubereport
 ```
 
 ## Additional Information
 
-### SonarQube Analysis
+### Development and Postman Testing
 
-To run a SonarQube analysis of the code:
+In case you want to test using Postman and go into development mode, you can start the database and DB express services only. Please uncomment the CommandLineRunner in the `RetailDiscountsApplication` class. This will insert raw data upon starting the app. Additionally, make sure to disable CSRF in the `SecurityConfig` class. You can run the application using IntelliJ or Eclipse.
+
+
+### Run Dockerized Database Only
+
+To run only the database, execute the following:
 
 ```bash
-mvn sonar:sonar -Dsonar.java.binaries=target/classes -Dsonar.login=sqa_1c3d332a32e5c580ec43dd08fd28c1af9479b6aa
+cd path/to/retail-discounts
+docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean install
 ```
 
 ---
