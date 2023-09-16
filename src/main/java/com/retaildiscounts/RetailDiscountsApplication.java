@@ -1,7 +1,19 @@
 package com.retaildiscounts;
 
+import com.retaildiscounts.model.entity.AppUser;
+import com.retaildiscounts.model.entity.Customer;
+import com.retaildiscounts.model.entity.CustomerType;
+import com.retaildiscounts.model.entity.Product;
+import com.retaildiscounts.repository.AppUserRepository;
+import com.retaildiscounts.repository.CustomerRepository;
+import com.retaildiscounts.repository.ProductRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.time.LocalDate;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class RetailDiscountsApplication {
@@ -10,7 +22,7 @@ public class RetailDiscountsApplication {
         SpringApplication.run(RetailDiscountsApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner runner(ProductRepository productRepository, CustomerRepository customerRepository, AppUserRepository appUserRepository) {
         return args -> {
             // Deleting existing data
@@ -38,6 +50,6 @@ public class RetailDiscountsApplication {
             AppUser susan = new AppUser("susan", "{noop}test123", "CASHIER,MANAGER");
             appUserRepository.insert(Arrays.asList(john, mary, susan));
         };
-    }*/
+    }
 
 }

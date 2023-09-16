@@ -15,6 +15,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http, UserDetailsService userDetailsService) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer.requestMatchers(HttpMethod.POST, "/api/calculate-net-amount").hasRole("CASHIER")
+                        .requestMatchers(HttpMethod.GET, "/actuator/*").hasRole("CASHIER")
         );
         http.httpBasic(Customizer.withDefaults());
         http.userDetailsService(userDetailsService);

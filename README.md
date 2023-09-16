@@ -10,37 +10,37 @@
 - Maven
 - JDK 17 or above
 
-## How to Run the Code
+## Installation
 
 ### Clone the Repository
 
-```
+```bash
 git clone https://github.com/mjmaahs/retail-discounts.git
 ```
 
 ### Run Dockerized Database & Application
 
-Open your command prompt and run:
+To run both the database and application, open your command prompt and execute:
 
 ```bash
 cd path/to/retail-discounts
 docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean install && docker-compose up -d app
 ```
 
-## How to Run Tests
+## Running Tests
 
-To run the unit tests, use the following Maven command:
+To execute the unit tests, use the following Maven command:
 
 ```bash
 cd path/to/retail-discounts
 mvn test
 ```
 
-## How to Generate Coverage Reports
+## Coverage Reports
 
-### JaCoCo report
+### JaCoCo Report
 
-Running the tests via Maven will also generate a JaCoCo report. You can find the report at:
+Running the tests via Maven will also generate a JaCoCo coverage report. The report can be found at:
 
 ```text
 path/to/retail-discounts/target/site/jacoco
@@ -48,7 +48,7 @@ path/to/retail-discounts/target/site/jacoco
 
 ### SonarQube Report
 
-You can find the SonarQube report at:
+The SonarQube report can be located at:
 
 ```text
 path/to/retail-discounts/src/sonarqubereport
@@ -58,16 +58,30 @@ path/to/retail-discounts/src/sonarqubereport
 
 ### Development and Postman Testing
 
-In case you want to test using Postman and go into development mode, you can start the database and DB express services only. Please uncomment the CommandLineRunner in the `RetailDiscountsApplication` class. This will insert raw data upon starting the app. Additionally, make sure to disable CSRF in the `SecurityConfig` class. You can run the application using IntelliJ or Eclipse.
+If you want to use Postman for testing or go into development mode:
 
+1. Start the database and DB express services only.
+2. Start the app from your IDE.
+3. Uncomment the `CommandLineRunner` in the `RetailDiscountsApplication` class to insert raw data upon startup.
+4. Disable CSRF in the `SecurityConfig` class.
+
+#### Actuator Endpoints
+
+The following Actuator endpoints are enabled: `health`, `info`, `mappings`.  
+Authentication: `username: john/test123`
+
+#### Postman Details
+
+- **URL**: `http://localhost:8080/api/calculate-net-amount`
+- **Method**: `POST`
+- **Body**: `{"productSerialNumbers": ["000001","000002","000003"],"username": "bruce"}`
+- **Basic Auth**: `username: john/test123`
 
 ### Run Dockerized Database Only
 
-To run only the database, execute the following:
+To run only the database, execute:
 
 ```bash
 cd path/to/retail-discounts
 docker-compose up -d mongo && docker-compose up -d mongo-express && mvn clean install
 ```
-
----
