@@ -39,10 +39,6 @@ class RetailDiscountsApplicationTests {
 	private DiscountCalculatorService discountCalculatorService;
 
 	@Test
-	void contextLoads() {
-	}
-
-	@Test
 	void testLoadUserByUsername() {
 		AppUser mockAppUser = new AppUser();
 		mockAppUser.setUsername("testUser");

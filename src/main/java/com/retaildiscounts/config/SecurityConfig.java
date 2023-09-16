@@ -1,6 +1,5 @@
 package com.retaildiscounts.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,17 +11,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
-
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http, UserDetailsService userDetailsService) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer.requestMatchers(HttpMethod.POST, "/api/calculate-net-amount").hasRole("CASHIER")
         );
         http.httpBasic(Customizer.withDefaults());
         http.userDetailsService(userDetailsService);
-        http.csrf(csrf -> csrf.disable());
+        //http.csrf(csrf -> csrf.disable());
 
         return http.build();
     }

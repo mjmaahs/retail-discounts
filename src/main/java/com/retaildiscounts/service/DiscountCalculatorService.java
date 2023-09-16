@@ -46,9 +46,8 @@ public class DiscountCalculatorService {
         BigDecimal discountAmount = discountStrategy.applyDiscount(totalAmount, products);
         // Calculate bulk discount ($5 for every $100)
         BigDecimal bulkDiscount = new BulkPurchaseDiscount().applyDiscount(totalAmount, products);
-        // Calculate net amount
-        BigDecimal netAmount = totalAmount.subtract(discountAmount).subtract(bulkDiscount);
-        return netAmount;
+        // return Calculated net amount
+        return totalAmount.subtract(discountAmount).subtract(bulkDiscount);
     }
 
     private DiscountStrategy getDiscountStrategy(Customer customer) {
