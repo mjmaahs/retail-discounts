@@ -35,77 +35,77 @@
     <pageHeader>
         <band height="20">
             <staticText>
-                <reportElement x="500" y="0" width="50" height="20"/>
+                <reportElement x="0" y="0" width="50" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[#]]></text>
             </staticText>
             <staticText>
-                <reportElement x="400" y="0" width="100" height="20"/>
+                <reportElement x="50" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[الإسم]]></text>
             </staticText>
             <staticText>
-                <reportElement x="300" y="0" width="100" height="20"/>
+                <reportElement x="150" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الهوية]]></text>
             </staticText>
             <staticText>
-                <reportElement x="200" y="0" width="100" height="20"/>
+                <reportElement x="250" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الطلب]]></text>
             </staticText>
             <staticText>
-                <reportElement x="100" y="0" width="100" height="20"/>
+                <reportElement x="350" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[تاريخ الحجز]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="0" width="100" height="20"/>
+                <reportElement x="450" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الحساب]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-100" y="0" width="100" height="20"/>
+                <reportElement x="550" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[المبلغ المحجوز]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-200" y="0" width="100" height="20"/>
+                <reportElement x="650" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[الرصيد وقت الحجز]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-300" y="0" width="100" height="20"/>
+                <reportElement x="750" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[الرصيد الحالي]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-400" y="0" width="150" height="20"/>
+                <reportElement x="850" y="0" width="150" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[اجمالي المبالغ المودعه بعد الحجز]]></text>
             </staticText>
             <staticText>
-                <reportElement x="-550" y="0" width="100" height="20"/>
+                <reportElement x="1000" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
@@ -117,47 +117,47 @@
     <detail>
         <band height="20">
             <textField>
-                <reportElement x="500" y="0" width="50" height="20"/>
+                <reportElement x="0" y="0" width="50" height="20"/>
                 <textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="400" y="0" width="100" height="20"/>
+                <reportElement x="50" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="300" y="0" width="100" height="20"/>
+                <reportElement x="150" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{id_number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="200" y="0" width="100" height="20"/>
+                <reportElement x="250" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{order_number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="100" y="0" width="100" height="20"/>
+                <reportElement x="350" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{reservation_date}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="0" y="0" width="100" height="20"/>
+                <reportElement x="450" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{account_number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="-100" y="0" width="100" height="20"/>
+                <reportElement x="550" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{reserved_amount}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="-200" y="0" width="100" height="20"/>
+                <reportElement x="650" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{balance_at_reservation}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="-300" y="0" width="100" height="20"/>
+                <reportElement x="750" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{current_balance}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="-400" y="0" width="150" height="20"/>
+                <reportElement x="850" y="0" width="150" height="20"/>
                 <textFieldExpression><![CDATA[$F{total_deposited_amounts}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="-550" y="0" width="100" height="20"/>
+                <reportElement x="1000" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{amount_to_be_reserved}]]></textFieldExpression>
             </textField>
         </band>
