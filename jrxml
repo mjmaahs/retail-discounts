@@ -1,157 +1,169 @@
-To create a JasperReports template that matches the right-to-left format of your provided Excel template, we need to carefully design the `.jrxml` file to ensure the layout, alignment, and text direction are correctly configured.
-
-Here's how you can create a `.jrxml` file that matches the structure of your Excel template with right-to-left alignment:
-
-### Step-by-Step Guide
-
-#### Step 1: Define Fields and Layout
-
-The provided Excel sheet headers and their respective fields are as follows:
-
-1. #
-2. الإسم (Name)
-3. رقم الهوية (ID Number)
-4. رقم الطلب (Order Number)
-5. تاريخ الحجز (Reservation Date)
-6. رقم الحساب (Account Number)
-7. المبلغ المحجوز (Reserved Amount)
-8. الرصيد وقت الحجز (Balance at Reservation Time)
-9. الرصيد الحالي (Current Balance)
-10. اجمالي المبالغ المودعه بعد الحجز (Total Deposited Amounts After Reservation)
-11. المبلغ المطلوب حجزه (Amount to be Reserved)
-
-#### Step 2: Create the .jrxml Template
-
-Here's a `.jrxml` template that matches the structure of your Excel template with right-to-left alignment:
-
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
     http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
-    name="ReservationReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" language="groovy" orientation="Portrait">
+    name="ReservationReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" language="groovy" orientation="Portrait" whenNoDataType="AllSectionsNoDetail">
     
-    <property name="ireport.encoding" value="UTF-8"/>
-    <property name="net.sf.jasperreports.export.xlsx.ignore.cell.background" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.ignore.graphic" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.ignore.cell.border" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.white.page.background" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.detect.cell.type" value="true"/>
-    <property name="net.sf.jasperreports.export.xlsx.freeze.row.edge" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.one.page.per.sheet" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.rows" value="true"/>
-    <property name="net.sf.jasperreports.export.xlsx.remove.empty.space.between.columns" value="true"/>
-    <property name="net.sf.jasperreports.export.xlsx.font.size.fix.enabled" value="false"/>
-    <property name="net.sf.jasperreports.export.xlsx.sheet.names" value="Sheet1"/>
+    <property name="net.sf.jasperreports.export.xls.freeze.row.edge" value="true"/>
+    <property name="net.sf.jasperreports.export.xls.sheet.direction" value="RTL"/>
     
-    <parameter name="ReportTitle" class="java.lang.String"/>
-    <parameter name="number" class="java.lang.String"/>
-    <parameter name="name" class="java.lang.String"/>
-    <parameter name="id_number" class="java.lang.String"/>
-    <parameter name="order_number" class="java.lang.String"/>
-    <parameter name="reservation_date" class="java.lang.String"/>
-    <parameter name="account_number" class="java.lang.String"/>
-    <parameter name="reserved_amount" class="java.lang.String"/>
-    <parameter name="balance_at_reservation" class="java.lang.String"/>
-    <parameter name="current_balance" class="java.lang.String"/>
-    <parameter name="total_deposited_amounts" class="java.lang.String"/>
-    <parameter name="amount_to_be_reserved" class="java.lang.String"/>
-
-    <queryString>
-        <![CDATA[]]>
-    </queryString>
-
+    <field name="number" class="java.lang.String"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="id_number" class="java.lang.String"/>
+    <field name="order_number" class="java.lang.String"/>
+    <field name="reservation_date" class="java.lang.String"/>
+    <field name="account_number" class="java.lang.String"/>
+    <field name="reserved_amount" class="java.lang.String"/>
+    <field name="balance_at_reservation" class="java.lang.String"/>
+    <field name="current_balance" class="java.lang.String"/>
+    <field name="total_deposited_amounts" class="java.lang.String"/>
+    <field name="amount_to_be_reserved" class="java.lang.String"/>
+    
     <title>
         <band height="50">
             <staticText>
-                <reportElement x="0" y="0" width="555" height="30" uuid="4b61a8b7-1e85-43c0-ae7b-5e87e1c96562"/>
-                <textElement textAlignment="Center">
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
                     <font size="18" isBold="true"/>
                 </textElement>
-                <text><![CDATA[$P{ReportTitle}]]></text>
+                <text><![CDATA[Reservation Report]]></text>
             </staticText>
         </band>
     </title>
     
-    <columnHeader>
+    <pageHeader>
         <band height="20">
             <staticText>
-                <reportElement x="500" y="0" width="50" height="20" uuid="d1e2f060-2f9b-4b33-9f15-68c252e2694d"/>
+                <reportElement x="500" y="0" width="50" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[#]]></text>
             </staticText>
             <staticText>
-                <reportElement x="400" y="0" width="100" height="20" uuid="e4b17d2f-0476-4634-8995-7632cb64cf3d"/>
+                <reportElement x="400" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[الإسم]]></text>
             </staticText>
             <staticText>
-                <reportElement x="300" y="0" width="100" height="20" uuid="403b9e8e-e2a7-4f95-9a59-340ae23e370e"/>
+                <reportElement x="300" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الهوية]]></text>
             </staticText>
             <staticText>
-                <reportElement x="200" y="0" width="100" height="20" uuid="216dbfc1-cc97-41b4-bc7b-2bc4f05ddccd"/>
+                <reportElement x="200" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الطلب]]></text>
             </staticText>
             <staticText>
-                <reportElement x="100" y="0" width="100" height="20" uuid="dce95dcb-0ffb-4b73-bc1e-1ba30227b503"/>
+                <reportElement x="100" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[تاريخ الحجز]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="0" width="100" height="20" uuid="50c54767-3e0a-4323-8bbd-f0fa94d08325"/>
+                <reportElement x="0" y="0" width="100" height="20"/>
                 <textElement textAlignment="Right">
                     <font size="12" isBold="true"/>
                 </textElement>
                 <text><![CDATA[رقم الحساب]]></text>
             </staticText>
+            <staticText>
+                <reportElement x="-100" y="0" width="100" height="20"/>
+                <textElement textAlignment="Right">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[المبلغ المحجوز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="-200" y="0" width="100" height="20"/>
+                <textElement textAlignment="Right">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[الرصيد وقت الحجز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="-300" y="0" width="100" height="20"/>
+                <textElement textAlignment="Right">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[الرصيد الحالي]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="-400" y="0" width="150" height="20"/>
+                <textElement textAlignment="Right">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[اجمالي المبالغ المودعه بعد الحجز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="-550" y="0" width="100" height="20"/>
+                <textElement textAlignment="Right">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[المبلغ المطلوب حجزه]]></text>
+            </staticText>
         </band>
-    </columnHeader>
+    </pageHeader>
     
     <detail>
         <band height="20">
             <textField>
-                <reportElement x="500" y="0" width="50" height="20" uuid="6cf8f7f1-c90d-4451-86b5-fd4a1acbe7f6"/>
+                <reportElement x="500" y="0" width="50" height="20"/>
                 <textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="400" y="0" width="100" height="20" uuid="b12a8d59-4f3c-44a2-9b57-dc8b0cb70bc4"/>
+                <reportElement x="400" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="300" y="0" width="100" height="20" uuid="d299c59e-baae-4d7c-b3a1-3f85d9579dc1"/>
+                <reportElement x="300" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{id_number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="200" y="0" width="100" height="20" uuid="b41c4bbd-1e85-4b3a-9a7b-6b7b0a18dc56"/>
+                <reportElement x="200" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{order_number}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="100" y="0" width="100" height="20" uuid="9879d3e1-31a5-4eae-8cd7-cd2b9d5e97f3"/>
+                <reportElement x="100" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{reservation_date}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="0" y="0" width="100" height="20" uuid="4c38ec8a-b215-4b94-8f2c-52a15c3c0db6"/>
+                <reportElement x="0" y="0" width="100" height="20"/>
                 <textFieldExpression><![CDATA[$F{account_number}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="-100" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{reserved_amount}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="-200" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{balance_at_reservation}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="-300" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{current_balance}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="-400" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{total_deposited_amounts}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="-550" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{amount_to_be_reserved}]]></textFieldExpression>
             </textField>
         </band>
     </detail>
     
-    <columnFooter>
+    <pageFooter>
         <band height="20"/>
-    </columnFooter>
-    
-    <
+    </pageFooter>
+</jasperReport>
