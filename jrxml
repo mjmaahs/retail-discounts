@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" 
+    name="ReservationReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e76b8ed0-7c32-4a7f-b9f0-4e67a30e5a54">
+    
+    <field name="number" class="java.lang.String"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="id_number" class="java.lang.String"/>
+    <field name="order_number" class="java.lang.String"/>
+    <field name="reservation_date" class="java.lang.String"/>
+    <field name="account_number" class="java.lang.String"/>
+    <field name="reserved_amount" class="java.lang.String"/>
+    <field name="balance_at_reservation" class="java.lang.String"/>
+    <field name="current_balance" class="java.lang.String"/>
+    <field name="total_deposited_amounts" class="java.lang.String"/>
+    <field name="amount_to_be_reserved" class="java.lang.String"/>
+
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30"/>
+                <textElement>
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Reservation Report]]></text>
+            </staticText>
+        </band>
+    </title>
+    
+    <pageHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="50" height="20"/>
+                <text><![CDATA[#]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="0" width="100" height="20"/>
+                <text><![CDATA[الإسم]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="150" y="0" width="100" height="20"/>
+                <text><![CDATA[رقم الهوية]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="250" y="0" width="100" height="20"/>
+                <text><![CDATA[رقم الطلب]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="100" height="20"/>
+                <text><![CDATA[تاريخ الحجز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="450" y="0" width="100" height="20"/>
+                <text><![CDATA[رقم الحساب]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="550" y="0" width="100" height="20"/>
+                <text><![CDATA[المبلغ المحجوز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="650" y="0" width="100" height="20"/>
+                <text><![CDATA[الرصيد وقت الحجز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="750" y="0" width="100" height="20"/>
+                <text><![CDATA[الرصيد الحالي]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="850" y="0" width="150" height="20"/>
+                <text><![CDATA[اجمالي المبالغ المودعه بعد الحجز]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="1000" y="0" width="100" height="20"/>
+                <text><![CDATA[المبلغ المطلوب حجزه]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="50" height="20"/>
+                <textFieldExpression><![CDATA[$F{number}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="50" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="150" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{id_number}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="250" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{order_number}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{reservation_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="450" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{account_number}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="550" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{reserved_amount}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="650" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{balance_at_reservation}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="750" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{current_balance}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="850" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{total_deposited_amounts}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="1000" y="0" width="100" height="20"/>
+                <textFieldExpression><![CDATA[$F{amount_to_be_reserved}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    
+    <pageFooter>
+        <band height="20"/>
+    </pageFooter>
+</jasperReport>
